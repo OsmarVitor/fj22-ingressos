@@ -45,7 +45,6 @@ public class SalaController {
         return modelAndView;
     }
 
-
     @PostMapping("/admin/sala")
     @Transactional
     public ModelAndView salva(@Valid SalaForm salaForm, BindingResult result) {
@@ -72,10 +71,10 @@ public class SalaController {
     public ModelAndView listaSessoes(@PathVariable("id") Integer id) {
 
         Sala sala = salaDao.findOne(id);
-
-        ModelAndView view = new ModelAndView("sessao/lista");
+        
+        ModelAndView view = new ModelAndView("sessao/lista"); 
+        view.addObject("sala", sala);
         view.addObject("sessoes", sessaoDao.buscaSessoesDasala(sala));
-
         return view;
     }
 

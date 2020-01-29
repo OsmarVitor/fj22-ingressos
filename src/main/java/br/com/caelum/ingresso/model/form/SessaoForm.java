@@ -13,7 +13,6 @@ import br.com.caelum.ingresso.model.Sala;
 import br.com.caelum.ingresso.model.Sessao;
 
 public class SessaoForm {
-	
 	@NotNull
 	private Integer salaId;
 	
@@ -28,7 +27,7 @@ public class SessaoForm {
 		Filme filme = filmeDao.findOne(filmeId);
 		Sala sala = salaDao.findOne(salaId);
 		
-		Sessao sessao = new Sessao(this.horario, sala, filme);
+		Sessao sessao = new Sessao(this.horario, filme, sala);
 		
 		return sessao;
 	}

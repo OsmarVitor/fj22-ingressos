@@ -22,11 +22,13 @@ public class Sessao {
 	@ManyToOne
 	private Filme filme;
 	
-	
+	/**
+	 *@deprecated hiberate only
+	 */
 	public Sessao() {
 	}
 	
-	public Sessao(LocalTime horario, Sala sala, Filme filme) {
+	public Sessao(LocalTime horario, Filme filme,  Sala sala) {
 		this.horario = horario;
 		this.sala = sala;
 		this.filme = filme;
